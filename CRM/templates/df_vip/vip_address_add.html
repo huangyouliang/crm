@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block vip_right %}
+<div class="vipRight">
+   <h2 class="vipTitle"> 添加地址 </h2>
+
+   <form action="/vip_add/"  method="POST"  class="registerform">
+       {% csrf_token %}
+      <table class="grzx" width="705" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="90">收货人：</td>
+          <td><input type="text" class="text inputxt" name="name" datatype="*6-16" /></td>
+        </tr>
+        <tr>
+          <td>所在地区：</td>
+          <td><input type="text" class="text inputxt"  name="city" datatype="*"  /></td>
+        </tr>
+        <tr>
+          <td>街道地址：</td>
+          <td><input type="text" class="text inputxt"  name="address" datatype="*"/></td>
+        </tr>
+          <tr>
+          <td>邮编：</td>
+          <td><input   type="text" class="text inputxt"  name="code" datatype="*"/></td>
+        </tr>
+          <tr>
+          <td>联系电话：</td>
+          <td><input  type="text" class="text inputxt"  name="tel" datatype="*"/></td>
+        </tr>
+        <tr>
+          <td><input name="" value="保存" type="submit" class="submit" /></td>
+          <td></td>
+        </tr>
+      </table>
+      </form>
+  </div><!--vipRight/-->
+<div class="clears"></div>
+
+{% endblock %}

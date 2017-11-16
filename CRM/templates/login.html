@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block nav_up %}
+{% endblock %}
+{% block nav_left %}
+{% endblock %}
+{% block vip_right %}
+ <div class="mainCont">
+  <h1 class="logo" style="text-align:left;">
+  <a href="index.html"><img src="/static/images/logo.png" width="304" height="74" /></a>
+  </h1>
+  <div class="loginBox">
+   <div class="loginLeft">
+    <img src="/static/images/login.jpg" width="567" height="348" />
+   </div><!--loginLeft/-->
+   <div class="loginRight">
+    <form class="login" action="/login/" method="POST">
+        {% csrf_token %}
+     <label>邮箱/用户名/已验证手机</label>
+     <input type="text" class="loginName" name="user" />
+     <label>密码</label>
+     <input type="password" class="loginPwd" name="passwd" />
+     <div class="jizhu">
+      <input type="checkbox" /> 一周内免登陆 <a href="#">忘记密码</a>
+     </div><!--jizhu/-->
+     <div class="loginSub">
+      <input type="submit" value=" 登 录 " />
+     </div><!--loginSub/-->
+     <h2>合作伙伴登录：</h2>
+     <img src="/static/images/hezuo.jpg" width="260" height="30" />
+    </form><!--login/-->
+   </div><!--loginRight/-->
+   <div class="clears"></div>
+  </div><!--loginBox/-->
+ </div><!--mainCont/-->
+{% endblock %}
+{% block foot %}
+{% endblock %}

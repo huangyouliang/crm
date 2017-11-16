@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block vip_right %}
+
+
+  <div class="vipRight">
+   <h2 class="vipTitle">收货地址</h2>
+   
+   <div class="address">
+    <div class="addList">
+     <label><span class="red">* </span>选择地区:</label>
+     <select>
+      <option>请选择省</option>
+     </select>
+     <select>
+      <option>请选择市</option>
+     </select>
+     <select>
+      <option>请选择地区</option>
+     </select>
+    </div><!--addList-->
+    <div class="addList">
+     <label><span class="red">* </span>详细地址:</label>
+     <input type="text" />
+    </div><!--addList-->
+    <div class="addList">
+     <label><span class="red">* </span>邮政编码:</label>
+     <input type="text" />
+    </div><!--addList-->
+    <div class="addList">
+     <label><span class="red">* </span>收件人:</label>
+     <input type="text" />
+    </div><!--addList-->
+    <div class="addList">
+     <label><span class="red">* </span>手机号码:</label>
+     <input type="text" /> 或者固定电话 <input type="text" />
+    </div><!--addList--> 
+    <div class="addList2">
+     <input name="" value=" 确 认 " type="submit" class="submit" />
+    </div><!--addList2/-->
+   </div><!--address/-->
+   <table class="vipAdress">
+    <tr>
+     <th>收货人</th>
+     <th>所在地区</th>
+     <th>街道地址</th>
+     <th>邮编</th>
+     <th>电话/手机</th>
+     <th>操作</th>
+    </tr>
+       {% for add in address %}
+    <tr>
+     <td>{{ add.name }}</td>
+     <td>{{ add.city }}</td>
+     <td>{{ add.address }}</td>
+     <td>{{ add.code }}</td>
+     <td>{{ add.tel }}</td>
+     <td><a href="/vip_modify/{{ add.id }}" class="green upd">[修改]</a> | <a href="/addressdel/{{ add.id }}" class="green add">[删除]</a> </td>
+    </tr>
+       {% endfor %}
+   </table><!--vipAdress/-->
+  <td>
+      <tr>&nbsp;&nbsp;</tr>
+{#  <tr><input type="button" herf="/vip_address_add/" value="添加"></tr>#}
+      <a href="/vip_add/" >添加</a>
+  </td>
+  </div><!--vipRight/-->
+  <div class="clears"></div>
+ {% endblock %}

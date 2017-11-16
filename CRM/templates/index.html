@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block nav_up %}{% endblock %}
+{% block nav_left %}{% endblock %}
+{% block vip_right %}
+</div><!--hrader/-->
+ <div class="inCont">
+  <h1 class="logo"><a href="index.html"><img src="/static/images/logo.png" width="304" height="74" /></a></h1>
+  <form class="select" action="prolist.html" method="get">
+   <div>
+    <input type="text" value="请输入你需要的产品" class="selName" onFocus=OnEnter(this) onBlur=OnExit(this) />
+    <input type="image" src="/static/images/sub.png" width="99" height="36" class="sel" />
+   </div>
+  </form><!--select/-->
+  <div class="ban">
+   <a href="prolist.html"><img src="/static/images/phone.png" /></a>
+  </div><!--ban/-->
+ </div><!--inCont/-->
+{% endblock %}
+{% block foot %}{% endblock %}
